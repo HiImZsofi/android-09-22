@@ -2,6 +2,7 @@ package com.example.android_09_22;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import java.util.Locale;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 inputtext = (String) button1.getText();
                 String lowercase = inputtext.toLowerCase();
                 output.setText(lowercase);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Random rnd = new Random();
+                output.setBackgroundColor(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)));
             }
         });
 
